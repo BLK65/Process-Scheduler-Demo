@@ -1,12 +1,3 @@
-/*
-    Q0: take a time to inspect code and its comment, try to understand what every line does.
-    Q1: complete TODOs
-    Q2: notice that all scheduling methods are preemptive. explain how preemtion is achived in the code.
-    Q3: test all schedulers by changing SCHEDULING_ALGORITHM variable in process.c, for each scheduler build & run (gcc *.c && ./a.out).
-        The program will output detailed information. use this information to draw gantt charts (both for cpu and io).
-*/
-
-//IMPORTANT: please do not add or remove any printf. Leave the output as is. Do not modify functions marked with "!this function does not requires modifications!"
 #include "process.h"
 #include "queue.h"
 #include <stdio.h>
@@ -182,7 +173,6 @@ void fcfs_scheduler()
 
 void sjf_scheduler()
 {
-    //TODO: implement Shortest Job First Scheduler
     struct process* p;
     node_ptr current;
 
@@ -263,7 +253,6 @@ void sjf_scheduler()
 
 void priority_scheduler()
 {
-    //TODO: implememnt Priority Scheduler
     struct process* p;
     node_ptr current;
 
@@ -344,7 +333,6 @@ void priority_scheduler()
 
 
 //starts io operation for process p and moves it to waiting queue
-//!this function does not requires modifications!
 void enter_io(struct process* p)
 {
     printf("Process pid %d is entering io (T=%d)\n", p->pid, cpu_counter);
@@ -360,7 +348,6 @@ void enter_io(struct process* p)
 }
 
 //finishes io operation for process p and moves it to ready queue again
-//!this function does not requires modifications!
 void finish_io(struct process* p)
 {
     printf("Process pid %d is exiting io (T=%d)\n", p->pid, cpu_counter);
@@ -369,7 +356,6 @@ void finish_io(struct process* p)
 }
 
 //checks if any process has finished io operation (i.e. simulates interrupt or event)
-//!this function does not requires modifications!
 void io_completion()
 {
     struct process* p;
@@ -391,7 +377,6 @@ void io_completion()
 }
 
 //calculates and prints average turnaround & waiting time.
-//!this function does not requires modifications!
 void print_statistics()
 {
     node_ptr current;
